@@ -8,9 +8,12 @@ import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.antibrokedswu.R
 
 class RegretFragment : Fragment(R.layout.fragment_regret) {
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -48,6 +51,19 @@ class RegretFragment : Fragment(R.layout.fragment_regret) {
             val percent = values[2] / total * 100
             showPopup(it, "취미", percent)
         }
+
+        // 🔹 3. RecyclerView (여기 안으로 들어가야 함!!)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewRegret)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        val itemList = listOf(
+            Item("제브라 볼펜", "₩10,000"),
+            Item("샤프", "₩8,000"),
+            Item("옷", "₩12,000")
+        )
+
+        val adapter = ItemAdapter(itemList)
+        recyclerView.adapter = adapter
     }
 
     private fun showPopup(anchor: View, category: String, percent: Float) {

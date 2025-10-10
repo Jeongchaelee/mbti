@@ -88,40 +88,12 @@
 
     </LinearLayout>
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="340dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:stateListAnimator="@null">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="제브라 볼펜"
-                android:textSize="20dp"
-                android:layout_marginLeft="20dp"
-                android:fontFamily="@font/pretendard_regular"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="₩10,000"
-                android:textSize="20dp"
-                android:layout_marginRight="20dp"
-                android:fontFamily="@font/pretendard_regular"
-                android:textColor="@color/blue" />
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewRegret"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:overScrollMode="never"/>
 
     <View
         android:layout_width="330dp"
